@@ -1,4 +1,5 @@
 // checkbox not repeated
+let correctAnswer = '';
 document.addEventListener("DOMContentLoaded", function () {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach(checkbox => {
@@ -45,7 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
               if (list.length > 0) {
                   const randomIndex = Math.floor(Math.random() * list.length);
                   const randomWord = list[randomIndex].name;
-                  
+                  correctAnswer = list[randomIndex].name;
+                
                   if (randomWord) {
                       console.log('Random Word:', randomWord);
                       const wordsDiv = document.querySelector('.words');
@@ -69,7 +71,7 @@ const popupMessage = document.getElementById("popup-message");
 const restartBtn = document.getElementById("restart-btn");
 
 function showPopup(message) {
-  popupMessage.textContent = message;
+  popupMessage.innerHTML = message + '<br>The correct answer was: ' + correctAnswer;
   popup.style.display = "flex";
 }
 restartBtn.addEventListener("click", function () {
