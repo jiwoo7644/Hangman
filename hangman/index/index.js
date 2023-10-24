@@ -20,9 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const selectedDifficulties = Array.from(document.querySelectorAll('input[name="DIFFICULTIES"]:checked')).map(checkbox => checkbox.value);
       const gameBoard = document.querySelector('.GameBoard');
 
-      console.log("Selected Topics:", selectedTopics);
-      console.log("Selected Difficulties:", selectedDifficulties);
-
       var list = [];
       var url = `http://localhost:5000/${selectedTopics}?Difficulties=${selectedDifficulties}`;
       fetch(url)
@@ -49,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
                   correctAnswer = list[randomIndex].name;
                 
                   if (randomWord) {
-                      console.log('Random Word:', randomWord);
                       const wordsDiv = document.querySelector('.words');
                       const wordChars = randomWord.split('').map(char => {
                           if (char === ' ') {
@@ -124,7 +120,6 @@ alphabetButtons.forEach(button => {
           }
       }
       if (wordChars.filter(char => char.textContent.trim().toLowerCase() !== '' && char.style.visibility === 'visible').length === wordChars.length) {
-          console.log('Congratulations! You won the game!');
           showPopup('Congratulations! You won the game.');
       } 
   });
