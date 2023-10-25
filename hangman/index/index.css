@@ -73,12 +73,10 @@ label{
     display: grid;
     place-items: center;
     margin-top: 1rem;
-    border: 1px solid black;
 }
 
 .hangman{
     height: 100%;
-    border: 1px solid black;
 }
 
 .words {
@@ -87,7 +85,6 @@ label{
     justify-content: center; 
     align-items: center; 
     font-size:x-large;
-    border: 1px solid black;
 }
 
 .word-char {
