@@ -137,6 +137,8 @@ label{
 
 #restart-btn {
     margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
 }
 
 #hangman-display{
